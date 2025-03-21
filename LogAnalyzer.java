@@ -13,13 +13,14 @@ public class LogAnalyzer
     /**
      * Create an object to analyze hourly web accesses.
      */
-    public LogAnalyzer()
+    //12
+    public LogAnalyzer(String filename)
     { 
         // Create the array object to hold the hourly
         // access counts.
         hourCounts = new int[24];
         // Create the reader to obtain the data.
-        reader = new LogfileReader();
+        reader = new LogfileReader(filename);
     }
 
     /**
@@ -115,5 +116,5 @@ public class LogAnalyzer
 //7) 20
 //8) is suppose to be new double[50];
 //9) it becames out of bound
-//13
+//17 the busiest hous is 18
 
