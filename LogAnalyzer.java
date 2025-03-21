@@ -49,7 +49,26 @@ public class LogAnalyzer
             hour++;
         }
     }
+    //13 and 14
+        public int numberOfAccesses() {
+        int total= 0;
+        for(int counts : hourCounts){
+            total +=counts;
+        }
+        // Add the value in each element of hourCounts to // total. ...
+        return total;
+    }
     
+    //11
+    public void test(){
+        int[] marks = {1,3,4,5};
+        
+        for(int index = 0; index < marks.length; index++) {
+            if(marks[index] > 0) {
+                System.out.println(marks[index]);
+            }
+        }
+    }
     /**
      * Print the lines of data read by the LogfileReader
      */
@@ -57,14 +76,36 @@ public class LogAnalyzer
     {
         reader.printData();
     }
+    //15
+    public String busiestHour(){
+        int maxCount= 0;
+        int busiestHour = -1;
+        for (int i = 0; i < hourCounts.length;i++){
+            if (hourCounts[i] > maxCount){
+                maxCount = hourCounts[i];
+                busiestHour = i;
+            }
+        }
+        return "" + busiestHour + " is the busiest Hour";
+    }
+    //16
+    public String quitiestHour(){
+        int lowCount= hourCounts[0];
+        int quitiestHour = 0;
+        for (int i = 1; i < hourCounts.length;i++){
+            if (hourCounts[i] < lowCount){
+                lowCount = hourCounts[i];
+                quitiestHour = i;
+            }
+        }
+        return "" + quitiestHour + " is the quitiest Hour ";
+    }
 }
 //Part 1
 //1)Busy hour are hour 18
-//2)public int person(){
-//    int[] arr person = ()
+//2) int[] person = {}
 //}
-//3)public boolean vacant(){
-//    int[] arr vacant = ()
+//3)int[]vacant = {}
 //}
 //5) 1.the first one is that praket is in the wrong place should be place after the int
 //   2. is supposed to be boolean [] occupied = new boolean [5000]; 
@@ -74,6 +115,5 @@ public class LogAnalyzer
 //7) 20
 //8) is suppose to be new double[50];
 //9) it becames out of bound
-
-
+//13
 
