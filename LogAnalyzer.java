@@ -1,3 +1,5 @@
+
+
 /**
  * Read web server data and analyse hourly access patterns.
  * 
@@ -10,6 +12,7 @@ public class LogAnalyzer
     private int[] hourCounts;
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
+    
     /**
      * Create an object to analyze hourly web accesses.
      */
@@ -21,8 +24,9 @@ public class LogAnalyzer
         hourCounts = new int[24];
         // Create the reader to obtain the data.
         reader = new LogfileReader(filename);
+        
     }
-
+    
     /**
      * Analyze the hourly access data from the log file.
      */
@@ -101,6 +105,22 @@ public class LogAnalyzer
         }
         return "" + quitiestHour + " is the quitiest Hour ";
     }
+    //18
+    public int busiestTwoHourPeriod(){
+        int maxSum = 0;
+         int busiestHour = -1;
+
+    for (int i = 0; i < 23; i++) { 
+        int sum = hourCounts[i] + hourCounts[i + 1];
+
+        if (sum > maxSum) {
+            maxSum = sum;
+            busiestHour = i;
+        }
+    }
+
+    return busiestHour;
+    }
 }
 //Part 1
 //1)Busy hour are hour 18
@@ -116,5 +136,5 @@ public class LogAnalyzer
 //7) 20
 //8) is suppose to be new double[50];
 //9) it becames out of bound
-//17 the busiest hous is 18
+//17 the busiest hour is 18
 
